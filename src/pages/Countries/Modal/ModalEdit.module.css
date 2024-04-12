@@ -14,6 +14,7 @@
     margin-top: 20px;
     background-color: var(--main-bg-color);
     border-radius: 1rem;
+    box-shadow: var(--bg-shadow-dark-color);
     margin: 2rem auto;
     position: relative;
     padding: 0;
@@ -29,11 +30,24 @@
     bottom: 0;
     width: 100%;
     text-align: right;
+}
 
-  }
 .Modal_body {
     align-items: center;
     padding: 1rem;
+}
+.Modal_body_form{
+    padding:0 2rem;
+}
+.Modal_body_form_item {
+    padding: .2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Modal_body_form_item input {
+    border-radius: .5rem;
+    border: 1px solid var(--icons-color);
 }
 .Modal_footer button {
     background-color: var(--icons-color);
@@ -48,6 +62,6 @@
 .Modal_footer button:hover {
     background-color: var(--main-bg-color);
     border: 1px solid var(--icons-color);
-    box-shadow: var(--shadow-dark-color);
+    box-shadow: var(--bg-shadow-dark-color);
     color: var(--icons-color);
 }
