@@ -3,6 +3,8 @@ import { CountryData } from './CountryData'
 import Style from './Country.module.css';
 import ModalConfirm from './Modal/ModalConfirm';
 import ModalEdit from './Modal/ModalEdit';
+import ModalAdd from './Modal/ModalAdd';
+import Button from '../../components/Button/Button';
 import _ from "lodash"
 const Countries = () => {
   const [countries, setCountries] = useState(CountryData);
@@ -10,8 +12,9 @@ const Countries = () => {
   const [dataEdit, setDataEdit] = useState({});
   const [isShowModalDelete, setIsShowModalDelete] = useState(false);
   const [isShowModalEdit, setIsShowModalEdit] = useState(false);
+  const[isShowModelAddNew, setIsShowModalAddNew] = useState(false);
   const handleClose = () => {
-    // setIsShowModalAddNew(false)
+    setIsShowModalAddNew(false)
     setIsShowModalEdit(false)
     setIsShowModalDelete(false)
   }
@@ -23,8 +26,6 @@ const Countries = () => {
   const handleEditUser= (data) => {
     setDataEdit(data);
     setIsShowModalEdit(true)
-    // handleEditUserFromModal(user)
-    // console.log(user);
 }
   const handleDeleteUserFromModal = (countryToDelete) => {
     console.log("Original countries array:", countries);
@@ -33,8 +34,8 @@ const Countries = () => {
     cloneCountries = cloneCountries.filter(item => item.id !== countryToDelete.id);
     setCountries(cloneCountries);
   }
-  const handleUpdateTable = (user) => {
-    setCountries([user, ...countries])
+  const handleUpdateTable = (data) => {
+    setCountries([data, ...countries])
   }
   const handleEditFromModal = (editedData) => {
     const updatedCountries = countries.map(item =>
@@ -46,6 +47,7 @@ const Countries = () => {
   return (
     <>
     <div className={Style.countries}>
+        <div className={Style.countries_add}><span><Button btnName="Add" handleClick={()=> setIsShowModalAddNew(true)}></Button></span></div>
       <table className={Style.table_container}>
         <thead className={Style.table_container_head}>
           <tr>
@@ -62,11 +64,11 @@ const Countries = () => {
             <td>{el.name}</td>
             <td>{el.code}</td>
             <td>{el.des}</td>
-            <td onClick={()=> handleDelete(el)}>
-              Delete
+            <td >
+            <Button btnName="Delete" handleClick={()=> handleDelete(el)}></Button>
             </td>
-            <td onClick={() => handleEditUser(el)}>
-              Edit</td>
+            <td >
+            <Button btnName="Edit" handleClick={() => handleEditUser(el)}></Button></td>
           </tr>
           
         ))}
@@ -83,7 +85,14 @@ const Countries = () => {
               show={isShowModalEdit}
               dataEdit={dataEdit}
               handleClose={handleClose}
-              handleEditFromModal={handleEditFromModal} // Ensure correct prop name
+              handleEditFromModal={handleEditFromModal} 
+          />
+        }
+        {isShowModelAddNew &&
+          <ModalAdd
+              show={isShowModalEdit}
+              handleClose = {handleClose}
+              handleUpdateTable = {handleUpdateTable}
           />
         }
         </tbody>

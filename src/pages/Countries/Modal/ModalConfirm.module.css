@@ -24,30 +24,18 @@
     justify-content: center;
 }
 
-.Modal_footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: right;
-
-  }
 .Modal_body {
     align-items: center;
     padding: 1rem;
 }
-.Modal_footer button {
-    background-color: var(--icons-color);
-    color: var(--main-bg-color);
-    border: 1px solid var(--main-bg-color);
-    border-radius: 1rem;
-    width: 5rem;
-    padding: .5rem;
-    margin: 1rem;
+.Modal_footer {
+    position: absolute;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    bottom: 10px;
 }
-
-.Modal_footer button:hover {
-    background-color: var(--main-bg-color);
-    border: 1px solid var(--icons-color);
-    box-shadow: var(--shadow-dark-color);
-    color: var(--icons-color);
+.Modal_footer_button button {
+    box-shadow: var(--box-shadow);
+    margin-right: 2rem;
 }

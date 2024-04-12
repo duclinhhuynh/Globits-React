@@ -1,13 +1,20 @@
 .countries {    
     width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
+    /* margin: auto; */
 }
-
+.countries_add {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 80%;
+  padding: 1rem;
+}
+.countries_add button {
+  box-shadow: var(--box-shadow);
+}
 .table_container {
     width: 80%;
     border-collapse: collapse;
+    margin: auto;
   }
   
   .table_container_head {

@@ -1,6 +1,6 @@
 import React from 'react'
 import Style from './ModalConfirm.module.css';
-
+import Button from '../../../components/Button/Button';
 const ModalConfirm = (props) => {
   const {show, handleClose, dataDelete, handleDeleteUserFromModal} = props;
   const confirmDelete = async() => {
@@ -26,8 +26,12 @@ const ModalConfirm = (props) => {
             </div>
         </div>
         <div className={Style.Modal_footer}>
-          <button onClick={handleClose}>Close</button>
-          <button onClick={() => confirmDelete()}>Confirm</button>
+        <div className={Style.Modal_footer_button}>
+            <Button btnName="Close" handleClick={() => handleClose()}></Button>
+          </div>
+          <div className={Style.Modal_footer_button}>
+            <Button btnName="Confirm" handleClick={() => confirmDelete()}></Button>
+          </div>
         </div>
       </div>
     </div>

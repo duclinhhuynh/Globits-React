@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Style from './ModalEdit.module.css'
+import Button from '../../../components/Button/Button';
 
 const ModalEdit = (props) => {
     const {show, handleClose, dataEdit, handleEditFromModal } = props;
@@ -60,8 +61,12 @@ const ModalEdit = (props) => {
                     </form>
         </div>
         <div className={Style.Modal_footer}>
-          <button onClick={handleClose}>Close</button>
-          <button onClick={() => handleEdit()}>Confirm</button>
+        <div className={Style.Modal_footer_button}>
+            <Button btnName="Close" handleClick={() => handleClose()}></Button>
+          </div>
+          <div className={Style.Modal_footer_button}>
+            <Button btnName="Confirm" handleClick={() => handleEdit()}></Button>
+          </div>
         </div>
       </div>
     </div>
