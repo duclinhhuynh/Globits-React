@@ -1,0 +1,41 @@
+.countries {    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.table_container {
+    width: 80%;
+    border-collapse: collapse;
+  }
+  
+  .table_container_head {
+    background-color: #f2f2f2;
+    border: 1px solid #dddddd;
+  }
+  
+  .table_container_body {
+    border: 1px solid #dddddd;
+  }
+  
+  .table_container th,
+  .table_container td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .table_container tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .table_container tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  
+  .table_container td:nth-child(4),
+  .table_container td:nth-child(5) {
+    cursor: pointer;
+    color: blue;
+  }
+  

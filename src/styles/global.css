@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: none;
+  }
+  
+:root {
+    --icons-color: #4c5773;
+    --icons-light-color: #4c577341;
+    --icons-bg-color: #e2e6e9;
+    --shadow-dark-color: #d3dae7;
+    --bg-shadow-dark-color: #d3dae78f;
+    --bg-shadow-dark-color1: #d3dae700;
+    --shadow-light-color: #fff;
+    --main-bg-color: #ecf0f3;
+    --box-shadow: 1rem 1rem 1rem var(--shadow-dark-color),
+     -1rem -1rem 1rem var(--shadow-light-color);
+    --box-shadow-2: 0rem 0rem 0rem var(--shadow-dark-color),
+     -0.3rem -0.3rem 1rem var(--shadow-dark-color);
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+    --background-btn: #0284c7;
+  }
+
+  html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins',sans-serif;
+    background-color: var(--main-bg-color);
+    color: var(--icons-color);
+  }
+  
+  ::selection {
+    color: var(--shadow-dark-color);
+    background: var(--icons-color);
+  }
+  
+  ::-webkit-scrollbar {
+    width: 1rem;
+    border: 1px solid var(--main-bg-color);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 2rem;
+    background: var(--icons-color);
+    width: 0.5rem;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --foreground-rgb: 255, 255, 255;
+      --background-start-rgb: 0, 0, 0;
+      --background-end-rgb: 0, 0, 0;
+    }
+  }

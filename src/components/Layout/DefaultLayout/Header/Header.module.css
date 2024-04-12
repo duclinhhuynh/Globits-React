@@ -1,0 +1,20 @@
+.wrapper {
+    height: 60px;
+    /* box-shadow: 1px 1px #ccc; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 999;
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: var(--icons-color);
+}
+.header_container_menu {
+    margin: 1.2rem;
+    color: var(--icons-bg-color);
+}
