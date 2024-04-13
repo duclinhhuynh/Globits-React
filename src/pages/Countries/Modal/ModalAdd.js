@@ -1,30 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import Style from './ModalAdd.module.css';
 import Button from '../../../components/Button/Button';
-import { Formik, Form, Field, ErrorMessage, useFormik } from 'formik';
+import { Formik, Form, Field } from 'formik';
 const ModalAdd = (props) => {
     const {show, handleClose, handleUpdateTable } = props;
-    // const [formData, setFormData] = useState({
-    //     name: '',
-    //     code: '',
-    //     des: ''
-    // });
-    // const handleChange = (e) => {
-    //     const { name, value } = e.target;
-    //     setFormData({ ...formik, [name]: value });
-    // };
-
-    // const handleSubmit = () => {
-    //     if (!formik.name || !formik.code || !formik.des) {
-    //         // If any field is empty, don't proceed with adding
-    //         return;
-    //     }
-    //     handleUpdateTable(formik);
-    //     handleClose();
-    // };
     const handleOutsideClick = (e) => {
         if (e.target === e.currentTarget) {
-            handleClose(); // Close the modal if click occurs outside modal content
+            handleClose(); 
         }
     };
   return (
@@ -50,7 +32,6 @@ const ModalAdd = (props) => {
                     return errors;
                 }}
                 onSubmit={(values, { setSubmitting }) => {
-                    // Handle form submission here
                     console.log(values);
                     handleUpdateTable(values);
                     handleClose();
